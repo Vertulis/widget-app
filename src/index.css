@@ -1,0 +1,378 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* Side navigationn styling */
+.side-navbar{
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  background-color: hsl(219, 80%, 20%);
+}
+.dashboard-heading{
+  font-weight: 300;
+  margin-left: 10px;
+
+}
+
+.nav-btn {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  background-color: #0a275c;
+  transition: background-color 0.2s ;
+}
+
+.nav-btn:hover {
+  background-color:hsl(219, 80%, 30%);
+}
+
+.nav-btn i{
+  width: 35px;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.weather-container{
+  margin-left: 200px;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(/pexels-lum3n-44775-1028600.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+}
+/* Form styling */
+
+.form{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 400px;
+  justify-content: space-between;
+}
+.form input{
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0, 0.4);
+  backdrop-filter: blur(6px);
+  width: 250px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.submit-btn{
+  border: none;
+  background-color: hsl(219, 81%, 20%);
+  padding: 10px 20px;
+  width: 150px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.submit-btn:hover{
+  background-color: hsl(219, 81%, 30%);
+}
+/* -------------------------------------------------- */
+
+/* Divider holds the current weather, toggle button, and the hourly and daily forecast */
+.divider{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  margin-top: 20px;
+}
+
+/* Current weather styling */
+.current-weather-card{
+  width: 200px;
+  background-color: hsl(219, 81%, 20%);
+  height: fit-content;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 250px;
+}
+.location, .description{
+  text-align: center;
+}
+.location{
+  font-weight: 300;
+}
+.description{
+  font-size: 1.2em;
+}
+
+.weather-icon{
+  padding: 0;
+  margin: 0;
+  font-size: 4rem;
+}
+/* -------------------------------------------------- */
+
+/* Hourly weather components styling */
+.hourly-weather-container,
+.weekly-weather-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 990px) {
+  .side-navbar {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: none;
+    position: relative;
+    height: fit-content;
+    background-color: #0a275c;
+  }
+
+  .dashboard-heading {
+    width: fit-content;
+    margin: 0px;
+  }
+
+  .nav-btn {
+    width: 150px;
+    border: none;
+  }
+
+  .weather-container {
+    margin: 0;
+  }
+
+  .divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .divider-sub-container{
+    margin-top: 10px;
+  }
+
+  .hourly-weather-container,
+  .weekly-weather-container {
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+
+.hour-card{
+  display: inline-block; /* Fallback color */
+  background-color: rgba(0,0,0, 0.4);
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.hour-card:hover {
+  transform: scale(1.05);
+}
+
+.hour{
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 0;
+  margin: 5px;
+}
+/* -------------------------------------------------- */
+
+/* Daily weather components styling */
+
+
+.daily-weather-card{
+  display: inline-block; /* Fallback color */
+  background-color: rgba(0,0,0, 0.4);
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.daily-weather-card:hover {
+  transform: scale(1.05);
+}
+
+.daily-weather-card h1{
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+/* -------------------------------------------------- */
+
+
+
+/* Hour and weekly buttons */
+.toggle{
+  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition:  0.2s;
+}
+
+/* News styling */
+.news-container{
+  background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url(/pexels-cottonbro-3944454.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-left: 200px;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.news-heading{
+  font-weight:300;
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-left: 60px;
+  color: white;
+}
+
+.category-container{
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category-btn{
+  border: none;
+  background-color: hsl(219, 80%, 20%);
+  padding: 4px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.category-btn:hover{
+  background-color: hsl(219, 80%, 40%);
+}
+.article-card{
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgba(0,0,0, 0.4);
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s;
+}
+.article-title{
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.article-image{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 400px;
+  height: 280px;
+}
+
+.article-card:hover{
+  transform: scale(1.01);
+}
+
+.articles-container{
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  grid-template-columns: 400px 400px 400px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.article-description {
+  width: 90%; /* Adjust width as needed */
+  max-height: 150px; /* Use max-height for better control */
+  white-space: normal; /* Allows text to wrap */
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Displays ellipsis when text overflows */
+  padding: 0 10px; 
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box; /* For Safari support */
+  --webkit-line-clamp: 3; /* Number of lines before ellipsis */
+  --webkit-box-orient: vertical; /* Required for line clamping */
+}
+
+@media only screen and (max-width: 1446px) {
+  .news-container{
+    align-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    margin-left: 0;
+  }
+  .category-container{
+    display: grid;
+    width: 100vw;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-content: center;
+    background-color: black;
+  }
+
+  .articles-container{
+    grid-template-columns: 400px;
+    width: 100vw;
+    row-gap: 10px;
+  }
+}
+
+
+.suggestions-list {
+  border: 1px solid #ccc;
+  background-color:#0a275c;
+  list-style-type: none;
+  padding: 0;
+  width: 400px;
+  position: absolute; /* Adjust positioning as needed */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: hsl(219, 80%, 30%); /* Highlight on hover */
+}
+
